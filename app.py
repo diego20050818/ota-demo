@@ -1,7 +1,7 @@
 import datetime
 from update import check_for_updates
 from update.download import download_update
-__VERSION__ = '1.2.1'
+__VERSION__ = '1.3.0'
 
 print(f"v{__VERSION__:}")
 print("hello world")
@@ -11,6 +11,7 @@ def read_date_time():
     print(f"today is {date}")
 
 read_date_time()
+print(f"当前时间：{datetime.datetime.now():%H:%M:%S}")
 
 try:
     release = check_for_updates(__VERSION__)
