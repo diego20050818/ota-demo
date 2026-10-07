@@ -1,5 +1,7 @@
 import datetime
-__VERSION__ = '1.1.0'
+from update import check_for_updates
+from update.download import download_update
+__VERSION__ = '1.2.0'
 
 print(f"v{__VERSION__:}")
 print("hello world")
@@ -10,4 +12,22 @@ def read_date_time():
 
 read_date_time()
 
+try:
+    release = check_for_updates(__VERSION__)
+
+    if release is None:
+        print("没有可用更新")
+    else:
+        answer = input(f"发现可用更新{release['tag_name']} ，是否下载？[y/n]")
+
+        if answer.strip().lower() == "y":
+            path = download_update(release,__VERSION__)
+            print(f"已下载并校验，等待安装：{path.name}")
+            raise SystemExit(75)
+        else:
+            print("已经暂停下载")
+except Exception as error:
+    print(f"更新检查或下载失败，继续运行：{error}")
+
 input("press Enter to Exit")
+

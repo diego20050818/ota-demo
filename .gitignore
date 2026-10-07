@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+app.new.py
+app.new.json
+app.backup.py
+*.zip
