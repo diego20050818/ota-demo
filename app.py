@@ -13,6 +13,8 @@ def read_date_time():
 read_date_time()
 print(f"当前时间：{datetime.datetime.now():%H:%M:%S}")
 
+print("欢迎来到AI的世界 oaoa")
+
 try:
     release = check_for_updates(__VERSION__)
 

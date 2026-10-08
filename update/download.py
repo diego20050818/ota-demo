@@ -25,7 +25,7 @@ def download_update(release,current_version):
 
     target.write_bytes(data)
     metadata = {
-        "from_version":current_version,
+        "from_version":current_version,-
         "to_version":release['tag_name'],
         "digest":expected
     }
