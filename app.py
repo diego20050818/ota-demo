@@ -1,7 +1,7 @@
 import datetime
 from update import check_for_updates
 from update.download import download_update
-__VERSION__ = '1.3.0'
+__VERSION__ = '1.3.1'
 
 print(f"v{__VERSION__:}")
 print("hello world")
